@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<title>yooby kids – ملابس أطفال من 0 إلى 15 سنة</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@600;800&amp;family=Tajawal:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F9FC;--card:#fff;--ink:#17324D;--mute:#5B7389;--sun:#FFC83D;--line:#D5E3EE;--on-sun:#17324D;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1E2D;--card:#16293B;--ink:#EAF3FA;--mute:#9DB4C7;--line:#2A4258}}
+:root[data-theme="dark"]{--bg:#0F1E2D;--card:#16293B;--ink:#EAF3FA;--mute:#9DB4C7;--line:#2A4258}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 Tajawal,Tahoma,sans-serif}
+h1,h2,.logo{font-family:"Baloo Bhaijaan 2",Tajawal,Tahoma,sans-serif;margin:0;line-height:1.25}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+[hidden]{display:none!important}
+header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px clamp(16px,4vw,48px)}
+.hb{display:flex;gap:8px}
+.logo{font-size:28px;font-weight:800}
+.cartbtn{background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:8px 18px;font:700 15px Tajawal,sans-serif;cursor:pointer}
+.cartbtn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.cartbtn b{display:inline-block;min-width:22px;margin-inline-start:6px;background:var(--sun);color:var(--on-sun);border-radius:99px;text-align:center}
+.bump{animation:bump .35s}
+@keyframes bump{50%{transform:scale(1.25)}}
+.hero{padding:clamp(20px,5vw,56px) clamp(16px,4vw,48px) 8px;max-width:1100px;margin:auto}
+.hero h1{font-size:clamp(34px,7vw,64px);font-weight:800;max-width:14ch}
+.hero p{color:var(--mute);margin:10px 0 24px;max-width:46ch}
+.rwrap{overflow-x:auto;padding-bottom:4px}
+.ruler{display:flex;min-width:520px;border:2px solid var(--ink);border-radius:14px;overflow:hidden;background:var(--card)}
+.ruler button{flex:1;border:0;border-inline-start:2px solid var(--ink);background-color:transparent;color:var(--ink);cursor:pointer;padding:14px 6px 26px;font:700 15px/1.3 Tajawal,sans-serif;
+background-image:repeating-linear-gradient(to left,var(--ink) 0 1px,transparent 1px 12px);background-size:100% 9px;background-repeat:no-repeat;background-position:bottom}
+.ruler button:first-child{border-inline-start:0}
+.ruler button small{display:block;font-weight:400;color:var(--mute)}
+.ruler button[aria-pressed=true]{background-color:var(--sun);color:var(--on-sun)}
+.ruler button[aria-pressed=true] small{color:var(--on-sun)}
+main{max-width:1100px;margin:auto;padding:24px clamp(16px,4vw,48px) 60px}
+h2{font-size:24px;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.pic{aspect-ratio:1/0.8;display:grid;place-items:center}
+.pic svg{width:56%;height:auto;fill:#fff;stroke:#17324D;stroke-width:2.5;stroke-linejoin:round}
+.info{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.info h3{margin:0;font-size:17px}
+.price{font-weight:700;font-size:18px}
+select,input{width:100%;padding:8px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:500 14px Tajawal,sans-serif}
+.add{margin-top:auto;border:0;border-radius:12px;background:var(--sun);color:var(--on-sun);padding:10px;font:700 15px Tajawal,sans-serif;cursor:pointer}
+footer{text-align:center;color:var(--mute);padding:28px 16px calc(28px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line)}
+aside{position:fixed;top:0;bottom:0;inset-inline-start:0;width:min(380px,100%);background:var(--card);border-inline-end:1px solid var(--line);transform:translateX(100%);transition:transform .25s;z-index:20;display:flex;flex-direction:column;padding:calc(16px + env(safe-area-inset-top,0px)) 16px calc(16px + env(safe-area-inset-bottom,0px))}
+aside.open{transform:none}
+@media (prefers-reduced-motion:reduce){aside{transition:none}.bump{animation:none}}
+.ch{display:flex;justify-content:space-between;align-items:center}
+.ch button{border:0;background:none;color:var(--ink);font-size:26px;cursor:pointer}
+#items{flex:1;overflow-y:auto;margin:12px 0}
+.row{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.row small{color:var(--mute)}
+.q{display:flex;align-items:center;gap:8px;grid-column:1/-1}
+.q button{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;font-size:17px}
+.empty{color:var(--mute);text-align:center;margin-top:40px}
+.total{display:flex;justify-content:space-between;font-weight:700;font-size:18px;margin-bottom:10px}
+.order{display:block;text-align:center;text-decoration:none;background:#1FA855;color:#fff;border-radius:12px;padding:12px;font-weight:700}
+.order[aria-disabled=true]{opacity:.45;pointer-events:none}
+.adm{position:fixed;inset:0;background:var(--bg);z-index:30;overflow-y:auto;padding:calc(16px + env(safe-area-inset-top,0px)) 16px calc(24px + env(safe-area-inset-bottom,0px))}
+.adm>div{max-width:860px;margin:auto}
+.afield{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+.afield label{font-size:13px;color:var(--mute)}
+.arow{display:grid;grid-template-columns:2fr 1fr 1fr 90px 44px;gap:8px;margin-bottom:8px}
+.arow .del{border:1px solid var(--line);background:var(--card);border-radius:10px;cursor:pointer;font-size:16px}
+@media (max-width:640px){.arow{grid-template-columns:1fr 1fr 1fr}.arow input[data-k=n]{grid-column:1/-1}.arow .del{grid-column:auto}}
+.abar{position:sticky;bottom:0;display:flex;gap:8px;flex-wrap:wrap;padding:12px 0;background:var(--bg)}
+.abar .cartbtn{font-size:15px}
+#amsg{color:var(--mute);align-self:center}
+.hero-in{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:center;margin-bottom:22px}
+.hero-in p{margin-bottom:0}
+.line{width:100%;height:auto;overflow:visible}
+.line .rope{fill:none;stroke:var(--ink);stroke-width:2.5;stroke-linecap:round}
+.line .gm{stroke:#17324D;stroke-width:2;vector-effect:non-scaling-stroke;stroke-linejoin:round}
+.line .pin{fill:#FFC83D;stroke:#17324D;stroke-width:1.5}
+.sw{transform-box:fill-box;transform-origin:50% 0}
+@keyframes sw{from{transform:rotate(-5deg)}to{transform:rotate(5deg)}}
+@media (prefers-reduced-motion:reduce){.sw{animation:none}}
+@media (max-width:700px){.hero-in{grid-template-columns:1fr}.line{max-width:420px}}
+.perks{display:flex;flex-wrap:wrap;gap:6px 26px;max-width:1100px;margin:4px auto 0;padding:0 clamp(16px,4vw,48px);color:var(--mute);font-size:15px}
+.perks span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;margin-inline-end:8px;background:var(--c)}
+.card{border-radius:24px}
+.tag{z-index:1}
+.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.aitem{margin-bottom:14px}.aitem .arow{margin-bottom:6px}
+.aimg{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.aimg img{width:44px;height:44px;border-radius:10px;object-fit:cover}
+.up,.rm{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:4px 12px;font:500 13px Tajawal,sans-serif;cursor:pointer}
+.up:focus-within{outline:3px solid var(--sun);outline-offset:2px}
+.vh{position:absolute;opacity:0;width:1px;height:1px;overflow:hidden}
+.ast{font-size:13px;color:var(--mute)}
+footer p{margin:0}.loc,.hw{margin-top:4px}.loc a{color:var(--ink);font-weight:700;margin-inline-start:8px}
+.pic{position:relative;background-image:radial-gradient(rgba(255,255,255,.6) 2px,transparent 2.5px);background-size:18px 18px}
+.pic svg .d{fill:none;stroke-width:2;stroke-linecap:round}
+.pic svg .f{fill:#FFC83D;stroke-width:1.5}
+.tag{position:absolute;top:10px;inset-inline-start:10px;background:#fff;color:#17324D;border-radius:99px;padding:1px 11px;font:700 12px Tajawal,sans-serif}
+</style>
+</head>
+<body>
+<header data-keep="">
+  <div class="logo" id="logo" dir="ltr">yooby kids</div>
+  <div class="hb">
+    <button class="cartbtn alt" id="edit" hidden="">تعديل المتجر</button>
+    <button class="cartbtn" id="open" aria-label="فتح السلة">السلة <b id="cnt">0</b></button>
+  </div>
+</header>
+
+<section class="hero" data-keep="">
+  <div class="hero-in"><div><h1>ملابس تكبر مع طفلك</h1>
+  <p>من الولادة حتى 15 سنة. اختر عمر طفلك على المسطرة وشاهد القطع المناسبة له.</p></div>
+  <svg class="line" viewBox="0 0 420 125" aria-hidden="true">
+  <defs><path id="g-tee" class="gm" d="M30 14 10 28l10 16 10-6v48h40V38l10 6 10-16L70 14Q50 26 30 14Z"></path><path id="g-on" class="gm" d="M32 12Q50 24 68 12l20 14-10 16-10-6v26Q68 74 60 82v8H40v-8Q32 74 32 62V36l-10 6-10-16Z"></path><path id="g-dr" class="gm" d="M36 12Q50 22 64 12l6 24 14 54H16l14-54Z"></path></defs>
+  <path class="rope" d="M10 30Q210 70 410 30"></path>
+  <g fill="#F7C6D0" transform="translate(30 29) scale(.8)"><g class="sw" style="animation-delay: 0.05s;"><use href="#g-on"></use></g></g>
+  <g fill="#BFE0F5" transform="translate(100 35) scale(.9)"><g class="sw" style="animation-delay: 0.2s;"><use href="#g-dr"></use></g></g>
+  <g fill="#FDE3A7" transform="translate(172.5 38) scale(.85)"><g class="sw" style="animation-delay: 0.35s;"><use href="#g-tee"></use></g></g>
+  <g fill="#BFE8D4" transform="translate(247.5 36.7) scale(.75)"><g class="sw" style="animation-delay: 0.5s;"><use href="#g-on"></use></g></g>
+  <g fill="#E3D4F5" transform="translate(310 29) scale(.8)"><g class="sw" style="animation-delay: 0.65s;"><use href="#g-dr"></use></g></g>
+  <rect class="pin" x="67" y="35" width="6" height="14" rx="2"></rect><rect class="pin" x="142" y="43" width="6" height="14" rx="2"></rect><rect class="pin" x="212" y="45" width="6" height="14" rx="2"></rect><rect class="pin" x="282" y="42" width="6" height="14" rx="2"></rect><rect class="pin" x="347" y="35" width="6" height="14" rx="2"></rect>
+  </svg></div>
+  <div class="rwrap"><div class="ruler" id="ruler" role="group" aria-label="العمر"></div></div>
+</section>
+
+<section class="perks" data-keep=""><span style="--c:#F7A8B8">مقاسات لكل عمر</span><span style="--c:#7CCBA5">استلام من المحل أو توصيل</span><span style="--c:#FFC83D">اطلب بسهولة عبر واتساب</span></section>
+
+<main data-keep="">
+  <h2 id="ttl"></h2>
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer data-keep=""><p>اطلب عبر واتساب، ثم استلم من المحل أو اطلب التوصيل.</p><p class="loc"><span id="addr">طولكرم، مجمع الأشقر، الطابق الأول</span><a id="map" href="https://www.google.com/maps/search/?api=1&amp;query=%D8%B7%D9%88%D9%84%D9%83%D8%B1%D9%85%D8%8C%20%D9%85%D8%AC%D9%85%D8%B9%20%D8%A7%D9%84%D8%A3%D8%B4%D9%82%D8%B1%D8%8C%20%D8%A7%D9%84%D8%B7%D8%A7%D8%A8%D9%82%20%D8%A7%D9%84%D8%A3%D9%88%D9%84" target="_blank" rel="noopener noreferrer">افتح الموقع على الخريطة</a></p><p class="hw" id="hw"><span id="hrs">ساعات الدوام: من 9 صباحًا حتى 7 مساءً</span></p></footer>
+
+<aside id="cart" aria-label="السلة" data-keep="">
+  <div class="ch"><h2>سلتك</h2><button id="close" aria-label="إغلاق">×</button></div>
+  <div id="items"></div>
+  <div class="total"><span>المجموع</span><span id="sum">0 ₪</span></div>
+  <a class="order" id="wa" href="#" target="_blank" rel="noopener noreferrer" aria-disabled="true">أرسل الطلب عبر واتساب</a>
+</aside>
+
+<div class="adm" id="adm" data-keep="" hidden=""></div>
+
+<script type="application/json" id="data" data-keep="">{"name":"yooby kids","addr":"طولكرم، مجمع الأشقر، الطابق الأول","hours":"من 9 صباحًا حتى 7 مساءً","wa":"972598372428","products":[{"n":"بودي قطن للمولود","a":"baby","p":35,"c":"#BFE8D4","s":"onesie","img":""},{"n":"طقم نوم ناعم","a":"baby","p":60,"c":"#FDE3A7","s":"onesie","img":""},{"n":"طقم هدية للمواليد","a":"baby","p":120,"c":"#F7C6D0","s":"onesie","img":""},{"n":"فستان مناسبات صغير","a":"tod","p":95,"c":"#F7C6D0","s":"dress","img":""},{"n":"تيشيرت قطن ملوّن","a":"tod","p":30,"c":"#BFE0F5","s":"tee","img":""},{"n":"بيجامة صيفية","a":"tod","p":55,"c":"#FDE3A7","s":"tee","img":""},{"n":"تيشيرت رياضي","a":"kid","p":40,"c":"#BFE8D4","s":"tee","img":""},{"n":"فستان يومي","a":"kid","p":85,"c":"#E3D4F5","s":"dress","img":""},{"n":"قميص مدرسة","a":"kid","p":50,"c":"#BFE0F5","s":"tee","img":""},{"n":"تيشيرت عصري","a":"teen","p":55,"c":"#FDE3A7","s":"tee","img":""},{"n":"فستان مناسبات","a":"teen","p":140,"c":"#E3D4F5","s":"dress","img":""},{"n":"قميص كاجوال","a":"teen","p":70,"c":"#BFE8D4","s":"tee","img":""},{"n":"بنطال قطن للرضّع","a":"baby","p":40,"c":"#BFE0F5","s":"pants","img":""},{"n":"بنطال رياضي","a":"tod","p":45,"c":"#BFE8D4","s":"pants","img":""},{"n":"بنطال جينز","a":"kid","p":70,"c":"#BFE0F5","s":"pants","img":""},{"n":"بنطال كاجوال","a":"teen","p":85,"c":"#E3D4F5","s":"pants","img":""},{"n":"جاكيت شتوي للصغار","a":"tod","p":110,"c":"#FDE3A7","s":"jacket","img":""},{"n":"جاكيت بسحّاب","a":"kid","p":120,"c":"#F7C6D0","s":"jacket","img":""},{"n":"جاكيت عصري","a":"teen","p":150,"c":"#BFE8D4","s":"jacket","img":""}]}</script>
+<script data-keep="">
+const $=id=>document.getElementById(id);
+let DATA;
+const G={all:["الكل","كل الأعمار"],baby:["رضّع","0 – 24 شهرًا"],tod:["صغار","2 – 6 سنوات"],kid:["أطفال","7 – 10 سنوات"],teen:["كبار","11 – 15 سنة"]};
+const SZ={baby:["0-3 أشهر","3-6 أشهر","6-12 شهرًا","12-24 شهرًا"],tod:["2 سنة","3 سنوات","4 سنوات","5-6 سنوات"],kid:["7 سنوات","8 سنوات","9 سنوات","10 سنوات"],teen:["11-12 سنة","13-14 سنة","15 سنة"]};
+const SH={tee:"قطعة علوية",onesie:"بودي",dress:"فستان",pants:"بنطال",jacket:"جاكيت"};
+const PATH={tee:"M30 14 10 28l10 16 10-6v48h40V38l10 6 10-16L70 14Q50 26 30 14Z",onesie:"M32 12Q50 24 68 12l20 14-10 16-10-6v26Q68 74 60 82v8H40v-8Q32 74 32 62V36l-10 6-10-16Z",dress:"M36 12Q50 22 64 12l6 24 14 54H16l14-54Z",pants:"M32 12H68L72 90H55L50 40L45 90H28Z",jacket:"M32 12Q50 22 68 12L90 28L84 84L70 82V90H30V82L16 84L10 28Z"};
+const DET={tee:"M40 18Q50 28 60 18",onesie:"M42 15Q50 24 58 15",dress:"M30 42H70",pants:"M33 20H67",jacket:"M50 24V90"};
+const TR={pants:"translate(8 12.6) scale(.6)",jacket:"translate(13 16.5) scale(.5)"};
+const COL=["#BFE8D4","#FDE3A7","#F7C6D0","#BFE0F5","#E3D4F5"];
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
+function clean(d){
+  d=d&&typeof d==="object"?d:{};
+  const str=(v,n)=>String(v==null?"":v).slice(0,n);
+  const wa=str(d.wa,20).replace(/\D/g,"");
+  const ps=(Array.isArray(d.products)?d.products:[]).slice(0,200).map((x,i)=>{x=x||{};return{
+    n:str(x.n,80).trim()||"منتج",
+    a:Object.prototype.hasOwnProperty.call(SZ,x.a)?x.a:"baby",
+    p:Math.min(99999,Math.max(0,Math.round((+x.p||0)*100)/100)),
+    c:/^#[0-9a-fA-F]{6}$/.test(x.c)?x.c:COL[i%COL.length],
+    s:Object.prototype.hasOwnProperty.call(PATH,x.s)?x.s:"tee",img:/^[0-9a-f]{32}$/.test(x.img)?x.img:""}});
+  return{name:str(d.name,40).trim()||"yooby kids",addr:str(d.addr,120).trim(),hours:str(d.hours,80).trim(),wa:wa.length>=8&&wa.length<=15?wa:"",products:ps};
+}
+try{DATA=clean(JSON.parse($("data").textContent))}catch(e){DATA=clean({})}
+const WA=DATA.wa;
+const P=DATA.products.map((x,i)=>({...x,id:i}));
+let cur="all",cart=[];
+$("logo").textContent=DATA.name;
+function loc(r,addr){const w=r.querySelector(".loc");if(!addr){w.setAttribute("hidden","");return}w.removeAttribute("hidden");r.querySelector("#addr").textContent=addr;r.querySelector("#map").setAttribute("href","https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(addr))}
+loc(document,DATA.addr);
+function hrs(r,h){const w=r.querySelector("#hw");if(!h){w.setAttribute("hidden","");return}w.removeAttribute("hidden");r.querySelector("#hrs").textContent="ساعات الدوام: "+h}
+hrs(document,DATA.hours);
+function ruler(){$("ruler").innerHTML=Object.entries(G).map(([k,v])=>`<button data-g="${k}" aria-pressed="${k===cur}">${v[0]}<small>${v[1]}</small></button>`).join("")}
+function grid(){
+  const list=P.filter(x=>cur==="all"||x.a===cur);
+  $("ttl").textContent=cur==="all"?"كل القطع":"قطع للأعمار: "+G[cur][1];
+  $("grid").innerHTML=list.length?list.map(x=>`<article class="card"><div class="pic" style="background-color:${esc(x.c)}"><span class="tag">${G[x.a][0]}</span><svg viewBox="0 0 100 100" aria-hidden="true"><path d="${PATH[x.s]||PATH.tee}"/><path class="d" d="${DET[x.s]||DET.tee}"/><path class="d f" transform="${TR[x.s]||''}" d="M50 50l3.5 7 7.5 1-5.5 5.2 1.5 7.6L50 67l-7 3.8 1.5-7.6L39 58l7.5-1z"/></svg>${x.img?`<img src="/_blob/${x.img}" alt="${esc(x.n)}" loading="lazy">`:""}</div><div class="info"><h3>${esc(x.n)}</h3><div class="price">${esc(x.p)} ₪</div><select aria-label="المقاس" id="s${x.id}">${SZ[x.a].map(s=>`<option>${s}</option>`).join("")}</select><button class="add" data-id="${x.id}">أضف إلى السلة</button></div></article>`).join(""):'<p class="empty">لا توجد قطع في هذه الفئة بعد.</p>';
+}
+function draw(){
+  const n=cart.reduce((a,c)=>a+c.q,0),t=cart.reduce((a,c)=>a+c.q*P[c.id].p,0);
+  $("cnt").textContent=n;$("sum").textContent=t+" ₪";
+  $("items").innerHTML=cart.length?cart.map((c,i)=>`<div class="row"><b>${esc(P[c.id].n)}</b><span>${P[c.id].p*c.q} ₪</span><small>${c.size}</small><span></span><div class="q"><button data-i="${i}" data-d="-1" aria-label="إنقاص">−</button>${c.q}<button data-i="${i}" data-d="1" aria-label="زيادة">+</button></div></div>`).join(""):'<p class="empty">السلة فارغة. اختر قطعة وأضفها.</p>';
+  const a=$("wa");
+  if(n&&WA){const m="مرحبًا، أريد طلب:\n"+cart.map(c=>`• ${P[c.id].n} (${c.size}) × ${c.q}`).join("\n")+`\nالمجموع: ${t} ₪`;a.href="https://wa.me/"+WA+"?text="+encodeURIComponent(m);a.setAttribute("aria-disabled","false")}
+  else{a.href="#";a.setAttribute("aria-disabled","true")}
+}
+$("ruler").onclick=e=>{const b=e.target.closest("button");if(!b)return;cur=b.dataset.g;ruler();grid()};
+$("grid").onclick=e=>{const b=e.target.closest(".add");if(!b)return;const id=+b.dataset.id,size=$("s"+id).value,f=cart.find(c=>c.id===id&&c.size===size);f?f.q=Math.min(20,f.q+1):cart.push({id,size,q:1});draw();const c=$("cnt");c.classList.remove("bump");void c.offsetWidth;c.classList.add("bump")};
+$("items").onclick=e=>{const b=e.target.closest("button");if(!b)return;const c=cart[+b.dataset.i];c.q=Math.min(20,c.q+(+b.dataset.d));if(c.q<1)cart.splice(+b.dataset.i,1);draw()};
+$("open").onclick=()=>$("cart").classList.add("open");
+$("close").onclick=()=>$("cart").classList.remove("open");
+$("grid").addEventListener("error",e=>{if(e.target.tagName==="IMG")e.target.remove()},true);
+ruler();grid();draw();
+
+/* ===== لوحة التعديل (تظهر لصاحب المتجر فقط) ===== */
+let D;
+function adm(){
+  $("adm").innerHTML=`<div><h2>تعديل المتجر</h2>
+  <div class="afield"><div><label for="an">اسم المتجر</label><input id="an" maxlength="40" data-top="name" value="${esc(D.name)}" dir="ltr"></div>
+  <div><label for="aw">رقم واتساب (مع رمز الدولة، أرقام فقط)</label><input id="aw" maxlength="20" data-top="wa" value="${esc(D.wa)}" dir="ltr" inputmode="numeric"></div><div style="grid-column:1/-1"><label for="ad">عنوان المحل</label><input id="ad" maxlength="120" data-top="addr" value="${esc(D.addr)}"></div><div style="grid-column:1/-1"><label for="ah">ساعات الدوام</label><input id="ah" maxlength="80" data-top="hours" value="${esc(D.hours)}"></div></div>
+  <h2 style="font-size:19px">المنتجات</h2>
+  ${D.products.map((x,i)=>`<div class="aitem"><div class="arow"><input maxlength="80" data-k="n" data-i="${i}" value="${esc(x.n)}" aria-label="اسم المنتج"><select data-k="a" data-i="${i}" aria-label="العمر">${Object.keys(SZ).map(k=>`<option value="${k}"${k===x.a?" selected":""}>${G[k][0]} (${G[k][1]})</option>`).join("")}</select><select data-k="s" data-i="${i}" aria-label="النوع">${Object.keys(SH).map(k=>`<option value="${k}"${k===x.s?" selected":""}>${SH[k]}</option>`).join("")}</select><input type="number" min="0" max="99999" data-k="p" data-i="${i}" value="${esc(x.p)}" aria-label="السعر بالشيكل"><button class="del" data-del="${i}" aria-label="حذف المنتج">🗑</button></div><div class="aimg">${x.img?`<img src="/_blob/${x.img}" alt="">`:""}<label class="up">${x.img?"تغيير الصورة":"إضافة صورة"}<input class="vh" type="file" accept="image/png,image/jpeg,image/webp" data-up="${i}"></label>${x.img?`<button class="rm" data-rm="${i}">إزالة الصورة</button>`:""}<span class="ast" id="ast${i}" role="status"></span></div></div>`).join("")}
+  <div class="abar"><button class="cartbtn alt" id="aadd">إضافة منتج</button><button class="cartbtn" id="asave">حفظ ونشر</button><button class="cartbtn alt" id="acancel">إلغاء</button><span id="amsg" role="status"></span></div></div>`;
+}
+$("edit").onclick=()=>{D=JSON.parse(JSON.stringify(DATA));adm();$("adm").hidden=false};
+$("adm").addEventListener("input",e=>{const t=e.target;if(t.dataset.top){D[t.dataset.top]=t.value;return}if(t.dataset.k){const x=D.products[+t.dataset.i];x[t.dataset.k]=t.dataset.k==="p"?(+t.value||0):t.value}});
+$("adm").addEventListener("click",e=>{
+  const t=e.target.closest("button");if(!t)return;
+  if(t.id==="aadd"){D.products.push({n:"منتج جديد",a:"baby",p:50,c:COL[D.products.length%COL.length],s:"tee"});adm();return}
+  if(t.dataset.del!==undefined){D.products.splice(+t.dataset.del,1);adm();return}
+  if(t.dataset.rm!==undefined){D.products[+t.dataset.rm].img="";adm();return}
+  if(t.id==="acancel"){$("adm").hidden=true;return}
+  if(t.id==="asave")save();
+});
+async function shrink(f){
+  try{
+    const b=await createImageBitmap(f),s=Math.min(1,900/Math.max(b.width,b.height));
+    const c=document.createElement("canvas");c.width=Math.round(b.width*s);c.height=Math.round(b.height*s);
+    c.getContext("2d").drawImage(b,0,0,c.width,c.height);
+    const o=await new Promise(r=>c.toBlob(r,"image/jpeg",.82));
+    return o||f;
+  }catch(e){return f}
+}
+$("adm").addEventListener("change",async e=>{
+  const t=e.target;if(!t.dataset||t.dataset.up===undefined)return;
+  const i=+t.dataset.up,f=t.files&&t.files[0],st=$("ast"+i);
+  if(!f)return;
+  if(!/^image\/(png|jpeg|webp)$/.test(f.type)){st.textContent="اختر صورة بصيغة PNG أو JPG أو WebP.";return}
+  let as=null;try{as=await window.claude.use("assets")}catch(_){}
+  if(!as){st.textContent="رفع الصور غير متاح لك.";return}
+  st.textContent="جارٍ الرفع…";
+  try{const r=await as.upload(await shrink(f));D.products[i].img=r.id;adm();const s2=$("ast"+i);if(s2)s2.textContent="تم الرفع. لا تنس «حفظ ونشر»."}
+  catch(err){st.textContent=err&&err.code==="too_large"?"الصورة كبيرة جدًا.":"تعذّر الرفع. حاول مرة أخرى."}
+});
+async function save(){
+  const msg=s=>{const m=$("amsg");if(m)m.textContent=s};
+  D=clean(D);
+  if(!D.wa){msg("أدخل رقم واتساب صحيحًا (من 8 إلى 15 رقمًا مع رمز الدولة).");return}
+  let art=null;try{art=await window.claude.use("artifact")}catch(e){}
+  if(!art){msg("النشر غير متاح لك. افتح الصفحة من حساب صاحب المتجر.");return}
+  msg("جارٍ الحفظ…");
+  const doc=document.documentElement.cloneNode(true);
+  [...doc.children].forEach(el=>{if(el.tagName!=="HEAD"&&el.tagName!=="BODY")el.remove()});
+  [...doc.attributes].forEach(a=>{if(a.name!=="lang"&&a.name!=="dir")doc.removeAttribute(a.name)});
+  doc.removeAttribute("data-theme");doc.removeAttribute("style");
+  const hd=doc.querySelector("head"),st1=hd.querySelector("style");[...hd.childNodes].forEach(n=>{if(n.nodeType!==1){if(n.nodeType===8)n.remove();return}const ok=n.matches("meta[charset],meta[name=viewport],meta[name=referrer],title")||n===st1||(n.tagName==="LINK"&&/^https:\/\/fonts\.googleapis\.com\//.test(n.getAttribute("href")||""))||n.hasAttribute("data-keep");if(!ok)n.remove()});
+  const body=doc.querySelector("body");[...body.attributes].forEach(a=>body.removeAttribute(a.name));
+  [...body.children].forEach(el=>{if(!el.hasAttribute("data-keep"))el.remove()});
+  doc.querySelector("title").textContent=D.name+" – ملابس أطفال من 0 إلى 15 سنة";
+  ["ruler","grid","ttl","items"].forEach(id=>{doc.querySelector("#"+id).innerHTML=""});
+  doc.querySelector("#logo").textContent=D.name;
+  doc.querySelectorAll(".sw").forEach(e=>e.style.removeProperty("transform"));
+  loc(doc,D.addr);hrs(doc,D.hours);
+  doc.querySelector("#cnt").textContent="0";doc.querySelector("#sum").textContent="0 ₪";
+  doc.querySelector("#cart").classList.remove("open");
+  const wa=doc.querySelector("#wa");wa.setAttribute("href","#");wa.setAttribute("aria-disabled","true");
+  doc.querySelector("#adm").innerHTML="";doc.querySelector("#adm").setAttribute("hidden","");
+  doc.querySelector("#edit").setAttribute("hidden","");
+  doc.querySelector("#data").textContent=JSON.stringify(D).replace(/</g,"\\u003c");
+  try{await art.publish("<!DOCTYPE html>\n"+doc.outerHTML)}
+  catch(e){msg(e&&e.code==="conflict"?"تم تحديث الصفحة من مكان آخر. أعد المحاولة بعد إعادة التحميل.":"تعذّر الحفظ. حاول مرة أخرى.")}
+}
+(async()=>{try{const u=await window.claude.use("user");if(u&&await u.canEdit())$("edit").hidden=false}catch(e){}})();
+
+/* ===== حبل الغسيل يتحرك مع التمرير ===== */
+(function(){
+  const els=[...document.querySelectorAll(".sw")];
+  if(!els.length||matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+  const st=els.map((e,i)=>({e,a:0,v:1.5*(1+i*.12),k:.05+i*.007,m:1+i*.12}));
+  const L=new WeakMap();let run=true;
+  function loop(){
+    let on=false;
+    st.forEach(s=>{
+      s.v+=-s.k*s.a;s.v*=.96;
+      s.a=Math.max(-22,Math.min(22,s.a+s.v));
+      s.e.style.transform="rotate("+s.a.toFixed(2)+"deg)";
+      if(Math.abs(s.a)>.05||Math.abs(s.v)>.05)on=true;
+    });
+    if(on)requestAnimationFrame(loop);else run=false;
+  }
+  addEventListener("scroll",e=>{
+    const t=e.target===document?document.scrollingElement:e.target;
+    if(!t||t.scrollTop===undefined)return;
+    const y=t.scrollTop,dy=Math.max(-120,Math.min(120,y-(L.has(t)?L.get(t):y)));
+    L.set(t,y);
+    if(!dy)return;
+    st.forEach(s=>{s.v+=dy*.04*s.m});
+    if(!run){run=true;requestAnimationFrame(loop)}
+  },{passive:true,capture:true});
+  requestAnimationFrame(loop);
+})();
+</script>
+
+
+</body></html>
